@@ -22,25 +22,25 @@ class NoteController extends Controller
     {
     	$notes = [];
 
-    	if(isset($_GET['user_id'])) {
-    		$_GET['user_id'] = (int)$_GET['user_id'];
-    		$notes = Note::where('user_id', $_GET['user_id'])->get();
+    	if(isset($_GET['usuario_id'])) {
+    		$_GET['usuario_id'] = (int)$_GET['usuario_id'];
+    		$notes = Note::where('usuario_id', $_GET['usuario_id'])->get();
     	}
 
-    	return response()->json(['success' => true, 'notes' => $notes]);
+    	return response()->json(['sucesso' => true, 'notas' => $notes]);
     }
 
     public function store(Request $request)
     {
     	$note = Note::create($request->all());
 
-    	return response()->json(['success' => true, 'notes' => $note]);
+    	return response()->json(['sucesso' => true, 'notas' => $note]);
     }
 
     public function destroy(Request $request, $note)
     {
         Note::destroy($note);
 
-        return response()->json(['success' => true]);
+        return response()->json(['sucesso' => true]);
     }
 }

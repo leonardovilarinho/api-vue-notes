@@ -10,11 +10,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         User::create([
-            'password' => bcrypt($request->password),
-            'name'     => $request->name,
+            'senha' => bcrypt($request->senha),
+            'nome'     => $request->nome,
             'email'    => $request->email,
         ]);
-        return response()->json(['success' => true]);
+        return response()->json(['sucesso' => true]);
     }
 
     public function verify(Request $request)
@@ -22,18 +22,18 @@ class UserController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if($user) {
-            if(password_verify($request->password, $user->password)) {
+            if(password_verify($request->senha, $user->senha)) {
                 return response()->json([
-                    'success' => true,
+                    'sucesso' => true,
                     'user' => [
                         'id' => $user->id,
-                        'nome' => $user->name,
+                        'nome' => $user->nome,
                         'email' => $user->email,
                     ]
                 ]);
             }
         }
 
-        return response()->json(['success' => false]);
+        return response()->json(['sucesso' => false]);
     }
 }

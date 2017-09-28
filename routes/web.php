@@ -15,6 +15,6 @@ header("Access-Control-Allow-Headers: Content-Type");
 header('Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS, DELETE');
 
 
-Route::resource('notes', 'NoteController');
-Route::post('users/verify', 'UserController@verify');
-Route::post('users', 'UserController@store');
+Route::resource('notas', 'NoteController');
+Route::post('usuario/login', 'UserController@verify');
+Route::post('usuario', 'UserController@store');

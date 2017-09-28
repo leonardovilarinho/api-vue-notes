@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Note extends Model
 {
     protected $fillable = [
-        'content', 'user_id'
+        'conteudo', 'usuario_id'
     ];
 }
