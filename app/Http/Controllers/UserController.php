@@ -9,7 +9,11 @@ class UserController extends Controller
 {
     public function store(Request $request)
     {
-        User::create($request->except('password') + ['password' => bcrypt($request->password)]);
+        User::create([
+            'password' => bcrypt($request->password),
+            'name'     => $request->name,
+            'email'    => $request->email,
+        ]);
         return response()->json(['success' => true]);
     }
 
