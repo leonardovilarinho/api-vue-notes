@@ -26,7 +26,7 @@ class UserController extends Controller
             if(password_verify($request->senha, $user->senha)) {
                 return response()->json([
                     'sucesso' => true,
-                    'user' => [
+                    'usuario' => [
                         'id' => $user->id,
                         'nome' => $user->nome,
                         'email' => $user->email,
