@@ -1,14 +1,4 @@
 <?php
-
-ini_set('display_errors', 'On');
-ini_set('display_startup_errors', 'On');
-ini_set('error_reporting', -1);
-ini_set('log_errors', 'On');
-
-header('Access-Control-Allow-Origin', '*');
-header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
